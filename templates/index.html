@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Extractor</title>
+    <meta name="description" content="Upload PDF invoices and extract structured data to Excel automatically.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header>
+            <div class="logo-container">
+                <i data-lucide="file-spreadsheet" class="logo-icon"></i>
+                <div>
+                    <h1>Invoice Extractor</h1>
+                    <p>Automated PDF to Excel Data Piping</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn ghost" id="historyBtn" onclick="showHistory()">
+                    <i data-lucide="history"></i>
+                    <span>History</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Step 1: Company Selection (Dropdown with Radio) -->
+            <div class="step-card" id="companyStep">
+                <div class="step-label">
+                    <span class="step-number">1</span>
+                    <span>Select Company</span>
+                </div>
+                <p class="step-desc">Choose whose invoices you are uploading. This ensures the correct extraction rules are applied.</p>
+
+                <div class="custom-select-container">
+                    <div class="select-trigger" id="selectTrigger" onclick="toggleDropdown()">
+                        <div class="trigger-left">
+                            <i data-lucide="building-2" id="selectedIcon" class="trigger-icon"></i>
+                            <span id="selectedDisplay">Select a company...</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="chevron"></i>
+                    </div>
+                    
+                    <div class="select-options hidden" id="selectOptions">
+                        <div class="option" onclick="selectCompany('bmc', 'Biashara Merchant Co.', 'building-2')">
+                            <div class="option-left">
+                                <span class="radio-indicator"></span>
+                                <div class="option-details">
+                                    <span class="option-name">Biashara Merchant Co.</span>
+                                    <span class="option-desc">BMC · Delivery Notes</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option" onclick="selectCompany('pernod', 'Pernod Ricard', 'wine')">
+                            <div class="option-left">
+                                <span class="radio-indicator"></span>
+                                <div class="option-details">
+                                    <span class="option-name">Pernod Ricard</span>
+                                    <span class="option-desc">Pick Slips</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="selected-company-bar hidden" id="selectedBar">
+                    <i data-lucide="check" class="check-small"></i>
+                    <span id="selectedLabel">Company selected</span>
+                    <button class="change-btn" onclick="clearCompany()">Reset</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Upload -->
+            <div class="step-card upload-step" id="uploadStep">
+                <div class="step-label">
+                    <span class="step-number">2</span>
+                    <span>Upload Invoices</span>
+                </div>
+
+                <div class="dropzone-card locked" id="dropzone">
+                    <input type="file" id="fileInput" multiple accept=".pdf" disabled />
+                    <div class="dropzone-content">
+                        <div class="upload-icon-pulse">
+                            <i data-lucide="upload-cloud"></i>
+                        </div>
+                        <h2 id="dropzoneTitle">Select a company first</h2>
+                        <p class="subtitle" id="dropzoneSubtitle">Complete Step 1 above before uploading files.</p>
+
+                        <div class="tip-badge">
+                            <i data-lucide="info"></i>
+                            <span>Tip: Upload multiple files at once. Max 50 per batch.</span>
+                        </div>
+
+                        <button class="btn browse-btn" id="browseBtn" onclick="document.getElementById('fileInput').click()" disabled>
+                            <i data-lucide="folder-open"></i>
+                            Select PDFs
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Processing Queue -->
+            <div class="processing-section hidden" id="processingSection">
+                <div class="section-header">
+                    <div class="section-title-group">
+                        <h3>Processing Queue</h3>
+                        <span class="company-pill" id="queueCompanyPill"></span>
+                    </div>
+                    <div class="section-actions">
+                        <button id="globalDownloadBtn" class="btn primary small hidden" onclick="triggerDownload()">
+                            <i data-lucide="download"></i> Download Excel
+                        </button>
+                        <span class="badge" id="queueStatus">0 / 0</span>
+                    </div>
+                </div>
+                <div class="queue-list" id="queueList">
+                    <!-- JS populates this -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal-overlay hidden" id="previewModal">
+        <div class="modal-content preview-modal-content">
+            <div class="preview-modal-header">
+                <div class="header-left">
+                    <i data-lucide="eye" class="preview-icon"></i>
+                    <div>
+                        <h2 id="previewTitle">Invoice Data Preview</h2>
+                        <p id="previewSubtitle">Review extracted line items below</p>
+                    </div>
+                </div>
+                <button class="close-modal-btn" onclick="closePreview()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="preview-modal-body">
+                <div class="table-responsive">
+                    <table id="previewTable">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Units</th>
+                                <th>UOM</th>
+                                <th>Qty</th>
+                                <th>Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody id="previewTableBody">
+                            <!-- JS populates this -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="preview-modal-footer">
+                <button onclick="closePreview()" class="btn secondary">Close Preview</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div class="modal-overlay hidden" id="historyModal">
+        <div class="modal-content history-modal-content">
+            <div class="preview-modal-header">
+                <div class="header-left">
+                    <i data-lucide="history" class="preview-icon"></i>
+                    <div>
+                        <h2>Session History</h2>
+                        <p>Files processed in this session</p>
+                    </div>
+                </div>
+                <button class="close-modal-btn" onclick="closeHistory()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="history-modal-body">
+                <div class="history-list" id="historyList">
+                    <!-- JS populates this -->
+                </div>
+                <div id="historyEmptyState" class="empty-state">
+                    <i data-lucide="clipboard-list"></i>
+                    <p>No processed files in this session yet.</p>
+                </div>
+            </div>
+
+            <div class="preview-modal-footer">
+                <button onclick="closeHistory()" class="btn secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay hidden" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal-btn top-right" onclick="closeSuccess()">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="success-icon-bg">
+                    <i data-lucide="check-circle" class="success-icon"></i>
+                </div>
+                <h2>Extraction Complete!</h2>
+                <p id="modalMessage">All files have been successfully processed and are ready for download.</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="countSuccess">0</span>
+                        <span class="stat-label">Successful</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="countError">0</span>
+                        <span class="stat-label">Failed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="modalDownloadBtn" class="btn primary full-width">
+                    <i data-lucide="download"></i> Download Excel
+                </button>
+                <button onclick="closeSuccess()" class="btn secondary full-width">Maybe Later / Add More</button>
+                <p class="refresh-tip">Site will reset after download to start fresh.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
