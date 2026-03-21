@@ -38,7 +38,7 @@ This app is production-ready! You can host it on platforms like **Render**, **Ra
 2. Select **Web Service**.
 3. Use these settings:
    - **Environment**: `Python`
-   - **Python Version**: `3.11.8` (Controlled by `runtime.txt`)
+   - **Python Version**: `3.11.8` (Controlled by `runtime.txt`). If Render still uses 3.14, add an environment variable `PYTHON_VERSION` with value `3.11.8` in the "Environment" tab of your Render dashboard.
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app`
 
