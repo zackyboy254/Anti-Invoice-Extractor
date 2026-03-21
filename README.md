@@ -29,8 +29,20 @@ python -m uvicorn app:app --reload --port 8000
 ```
 Then open your browser and go to: `http://127.0.0.1:8000`
 
-## 🛠️ Adding New Companies
-This project is designed to be easily extensible. If you want to add a new invoice structure, check out the [ADDING_EXTRACTORS.md](ADDING_EXTRACTORS.md) guide.
+## 🌐 Deployment (Online)
 
-## 🛡️ License
-MIT
+This app is production-ready! You can host it on platforms like **Render**, **Railway**, or **Heroku**.
+
+### 1. Simple Deployment (Render)
+1. Link your GitHub repo to [Render](https://render.com/).
+2. Select **Web Service**.
+3. Use these settings:
+   - **Environment**: `Python`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app`
+
+### 2. Multi-User Support
+The app uses a `session_id` logic to ensure that multiple users can process different batches of invoices at the same time without data mixing.
+
+### 3. Monitoring (Logs)
+All server-side activity (extractions, errors, downloads) is logged to `app.log`. On most hosting platforms, you can see these in the "Logs" tab of your dashboard.

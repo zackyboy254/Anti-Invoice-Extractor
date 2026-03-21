@@ -259,6 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item.status === "success") {
             const formData = new FormData();
             formData.append("file_id", id);
+            formData.append("session_id", SESSION_ID); // Track session
             fetch("/remove-file", { method: "POST", body: formData })
                 .catch(err => console.error("Failed to remove file data from backend:", err));
         }
@@ -283,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Trigger modal download logic (using the first successful company label or "Batch")
         const successfulItem = uploadQueue.find(i => i.status === "success");
         const companyLabel = successfulItem ? COMPANY_LABELS[successfulItem.company] : "Batch";
-        window.location.href = `/download?company=${encodeURIComponent(companyLabel)}`;
+        window.location.href = `/download?session_id=${SESSION_ID}&company=${encodeURIComponent(companyLabel)}`;
         
         // After download, show success summary again? No, just clear session as per user preference
         setTimeout(() => clearSession(), 1500);
@@ -308,6 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("file", item.file);
         formData.append("file_id", item.id); // Send unique ID for tracking
         formData.append("company", item.company);
+        formData.append("session_id", SESSION_ID); // Track session
 
         try {
             const res  = await fetch("/process", { method: "POST", body: formData });
@@ -390,9 +392,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     modalDownloadBtn.addEventListener("click", () => {
-        // Trigger download with company query param
+        // Trigger download with company query param and session_id
         const companyParam = encodeURIComponent(COMPANY_LABELS[selectedCompany] || "Invoices");
-        window.location.href = `/download?company=${companyParam}`;
+        window.location.href = `/download?session_id=${SESSION_ID}&company=${companyParam}`;
         
         // Show loading state on button
         modalDownloadBtn.disabled = true;
@@ -412,7 +414,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 2. Reset Backend State
         try {
-            await fetch("/reset", { method: "POST" });
+            const formData = new FormData();
+            formData.append("session_id", SESSION_ID);
+            await fetch("/reset", { method: "POST", body: formData });
         } catch (e) {
             console.error("Failed to reset backend:", e);
         }

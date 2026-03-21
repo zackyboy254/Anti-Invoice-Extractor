@@ -5,6 +5,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 import io
 import time
+import logging
 from datetime import datetime
 from typing import Optional
 
@@ -13,14 +14,32 @@ from extractors.bmc import BMCExtractor
 from extractors.pernod import PernodExtractor
 from utils.web_excel_writer import WebExcelWriter
 
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("app.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger("InvoiceExtractor")
+
 app = FastAPI(title="Invoice Extractor UI")
 
 # Setup static files and templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# Global state – fine for a single-user local web app
-current_excel_writer = None
+# Global session store – maps session_id -> WebExcelWriter instance
+SESSION_STORES: dict[str, WebExcelWriter] = {}
+
+def get_session_writer(session_id: str) -> WebExcelWriter:
+    """Helper to retrieve or create a writer for a specific session."""
+    if session_id not in SESSION_STORES:
+        SESSION_STORES[session_id] = WebExcelWriter()
+        logger.info(f"Created new session store: {session_id}")
+    return SESSION_STORES[session_id]
 
 # Map frontend company keys → extractor classes
 COMPANY_EXTRACTORS = {
@@ -31,16 +50,14 @@ COMPANY_EXTRACTORS = {
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui(request: Request):
     """Serves the main single-page application."""
-    global current_excel_writer
-    current_excel_writer = WebExcelWriter()
     return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.post("/reset")
-async def reset_backend():
-    """Resets the in-memory excel writer for a fresh batch."""
-    global current_excel_writer
-    current_excel_writer = WebExcelWriter()
+async def reset_backend(session_id: str = Form(...)):
+    """Resets the in-memory excel writer for a specific session."""
+    SESSION_STORES.pop(session_id, None)
+    logger.info(f"Reset session store: {session_id}")
     return {"status": "success", "message": "Backend reset successful"}
 
 
@@ -48,15 +65,15 @@ async def reset_backend():
 async def process_file(
     file: UploadFile = File(...),
     company: Optional[str] = Form(None),   # "bmc" | "pernod" from the dropdown
-    file_id: str = Form(...),              # Frontend-generated unique ID
+    file_id: str = Form(...),              # Frontend-generated unique ID for line removal
+    session_id: str = Form(...),           # Unique browser session ID
 ):
     """
     Processes a single PDF file, extracts data, and appends it to the 
-    Excel buffer with a tracking file_id.
+    Excel buffer for the specific session.
     """
-    global current_excel_writer
-    if current_excel_writer is None:
-        current_excel_writer = WebExcelWriter()
+    writer = get_session_writer(session_id)
+    logger.info(f"[{session_id}] Processing file: {file.filename} (Company: {company or 'Auto'})")
 
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
@@ -78,12 +95,13 @@ async def process_file(
             raise ValueError("No item rows could be extracted from this PDF.")
 
         # Store in buffer with tracking ID
-        current_excel_writer.append_data(
+        writer.append_data(
             extracted_data, 
             file_id=file_id, 
             sheet_name=extractor.company_name
         )
 
+        logger.info(f"[{session_id}] Successfully parsed {len(extracted_data)} lines from {file.filename}")
         time.sleep(0.5)  # keeps the progress bar from blinking too fast
 
         return {
@@ -94,29 +112,31 @@ async def process_file(
         }
 
     except Exception as e:
-        print(f"Error processing {file.filename}: {e}")
+        logger.error(f"[{session_id}] Error processing {file.filename}: {e}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
 @app.post("/remove-file")
-async def remove_file_data(file_id: str = Form(...)):
+async def remove_file_data(file_id: str = Form(...), session_id: str = Form(...)):
     """
-    Removes data associated with a specific file_id from the Excel buffer.
+    Removes data associated with a specific file_id from the session's Excel buffer.
     """
-    global current_excel_writer
-    if current_excel_writer:
-        current_excel_writer.remove_file_data(file_id)
+    if session_id in SESSION_STORES:
+        SESSION_STORES[session_id].remove_file_data(file_id)
+        logger.info(f"[{session_id}] Removed file data for ID: {file_id}")
     return {"status": "success"}
 
 
 @app.get("/download")
-async def download_excel(company: Optional[str] = None):
-    """Returns the compiled Excel file with a dynamic filename based on company."""
-    global current_excel_writer
-    if current_excel_writer is None:
-        raise HTTPException(status_code=400, detail="No files have been processed yet.")
+async def download_excel(session_id: str, company: Optional[str] = None):
+    """Returns the compiled Excel file for the specific session."""
+    if session_id not in SESSION_STORES:
+        logger.warning(f"Download attempt failed. Session not found: {session_id}")
+        raise HTTPException(status_code=400, detail="No files have been processed in this session.")
 
-    excel_stream = current_excel_writer.get_excel_bytes()
+    writer = SESSION_STORES[session_id]
+    excel_stream = writer.get_excel_bytes()
+    logger.info(f"[{session_id}] Generating download for company prefix: {company or 'Batch'}")
 
     # Determine filename prefix
     prefix = "Invoices"
