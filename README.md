@@ -13,7 +13,7 @@ A modern, fast, and user-friendly web application to extract structured data fro
 ## 🚀 Quick Start
 
 ### 1. Prerequisites
-- Python 3.8 or higher.
+- **Python 3.11** (Recommended for stability and pre-built binaries).
 - [Google Chrome](https://www.google.com/chrome/) (Recommended).
 
 ### 2. Installation
@@ -38,6 +38,7 @@ This app is production-ready! You can host it on platforms like **Render**, **Ra
 2. Select **Web Service**.
 3. Use these settings:
    - **Environment**: `Python`
+   - **Python Version**: `3.11.8` (Controlled by `runtime.txt`)
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app`
 
