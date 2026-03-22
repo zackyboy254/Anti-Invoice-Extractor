@@ -83,11 +83,9 @@ class PernodExtractor(BaseExtractor):
                         if current_item:
                             self._append_row(customer_name, ship_to_name, order_number, current_item)
                             
-                        # Start a new item
-                        # Match: Code Description [Cases or Units] [UM] [Qty Ordered] [Weight]
-                        # The ending looks like "2 CA 2 22.8000" or "6.00 EA 6 3.9500"
+                        # Match: Code Description [Cases or Units (Optional)] [UM (Optional)] [Qty Ordered] [Weight]
                         # We match optionally the first number, then UM, then Qty, then Weight
-                        match = re.search(r'(?:([\d\.]+)\s+)?([A-Za-z]+)\s+([\d\.]+)\s+([\d\.]+)$', line.strip())
+                        match = re.search(r'(?:([\d\.]+)\s+)?([A-Za-z]*)\s*([\d\.]+)\s+([\d\.]+)$', line.strip())
                         
                         code = line.split()[0]
                         desc = ""

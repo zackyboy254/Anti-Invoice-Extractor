@@ -70,9 +70,9 @@ class BMCExtractor(BaseExtractor):
                 # A typical line: "244128 Grants Triple Wood 12x75cl 40.0 NR WRD TR GX 12.00 Bottles 2,234.48 15.36"
                 # Regex to match the pattern: Code Description [Quantity] [Unit (e.g. Bottles)] [Tax] [Weight]
                 
-                # Match ending with: [Quantity] [Unit] [Tax (Optional)] [Weight]
-                # Regex: Qty(1) Unit(2) Tax(3, optional) Weight(4)
-                match = re.search(r'([\d\.]+)\s+([A-Za-z]+)\s+(?:([\d\,\.]+)\s+)?([\d\.]+)$', line.strip())
+                # Match ending with: [Quantity] [Unit (Optional)] [Tax (Optional)] [Weight]
+                # Regex: Qty(1) Unit(2, optional) Tax(3, optional) Weight(4)
+                match = re.search(r'([\d\.\,]+)\s+([A-Za-z]*)\s*(?:([\d\,\.]+)\s+)?([\d\.\,]+)$', line.strip())
                 if match:
                     qty = match.group(1)
                     unit = match.group(2)

@@ -48,3 +48,111 @@
 2026-03-22 11:11:40,204 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Successfully parsed 1 lines from Verum-DN 21336.pdf
 2026-03-22 11:11:44,765 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Generating download for company prefix: Batch
 2026-03-22 11:11:46,182 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Generating download for company prefix: Batch
+2026-03-22 11:37:10,682 [INFO] Created new session store: 83a19d93-8d54-4e36-b642-cf6672633deb
+2026-03-22 11:37:10,683 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Tamarind Carnivore-DN 21294.pdf
+2026-03-22 11:37:10,881 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Tamarind Carnivore-DN 21294.pdf
+2026-03-22 11:38:11,664 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Shree Ram - SH04-09-2025.pdf
+2026-03-22 11:38:11,849 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 4 lines from Picking Slip - Shree Ram - SH04-09-2025.pdf
+2026-03-22 11:38:12,399 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Quickmart Joska-DN 21208.pdf
+2026-03-22 11:38:12,816 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Quickmart Joska-DN 21208.pdf
+2026-03-22 11:38:13,354 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Quickmart Kiserian-DN 21318.pdf
+2026-03-22 11:38:13,636 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 3 lines from Quickmart Kiserian-DN 21318.pdf
+2026-03-22 11:38:14,162 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Quickmart Kitale-DN 21343.pdf
+2026-03-22 11:38:14,389 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Quickmart Kitale-DN 21343.pdf
+2026-03-22 11:38:14,919 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Quickmart Rongai Main-DN 21320.pdf
+2026-03-22 11:38:15,194 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 4 lines from Quickmart Rongai Main-DN 21320.pdf
+2026-03-22 11:38:15,729 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Radisson Blu-DN 21316.pdf
+2026-03-22 11:38:15,942 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Radisson Blu-DN 21316.pdf
+2026-03-22 11:38:16,470 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Raila Jones-DN 23904.pdf
+2026-03-22 11:38:16,671 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Raila Jones-DN 23904.pdf
+2026-03-22 11:38:17,206 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Raila Jones-DN 23915.pdf
+2026-03-22 11:38:17,404 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Raila Jones-DN 23915.pdf
+2026-03-22 11:38:17,943 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Salty squid-DN 21295.pdf
+2026-03-22 11:38:18,283 [ERROR] [83a19d93-8d54-4e36-b642-cf6672633deb] Error processing Salty squid-DN 21295.pdf: No item rows could be extracted from this PDF.
+2026-03-22 11:38:18,312 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Salty Squid-DN 23882.pdf
+2026-03-22 11:38:18,571 [ERROR] [83a19d93-8d54-4e36-b642-cf6672633deb] Error processing Salty Squid-DN 23882.pdf: No item rows could be extracted from this PDF.
+2026-03-22 11:38:18,586 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Shan Punjab-DN 21276.pdf
+2026-03-22 11:38:18,843 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 3 lines from Shan Punjab-DN 21276.pdf
+2026-03-22 11:38:19,376 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Shan Punjab-DN 21281.pdf
+2026-03-22 11:38:19,629 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Shan Punjab-DN 21281.pdf
+2026-03-22 11:38:20,175 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Sliquor-DN 23858.pdf
+2026-03-22 11:38:20,411 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Sliquor-DN 23858.pdf
+2026-03-22 11:38:20,959 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Sliquor-DN 23860.pdf
+2026-03-22 11:38:21,207 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Sliquor-DN 23860.pdf
+2026-03-22 11:38:21,745 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Take Home Sales-SKAL-DN 21342.pdf
+2026-03-22 11:38:22,024 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Take Home Sales-SKAL-DN 21342.pdf
+2026-03-22 11:38:22,553 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Talisman-FFK-DN 21307.pdf
+2026-03-22 11:38:22,798 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Talisman-FFK-DN 21307.pdf
+2026-03-22 11:38:23,338 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Talisman-FFK-DN 21309.pdf
+2026-03-22 11:38:23,559 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Talisman-FFK-DN 21309.pdf
+2026-03-22 11:38:24,098 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Tamarind Limited-DN 21314.pdf
+2026-03-22 11:38:24,361 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Tamarind Limited-DN 21314.pdf
+2026-03-22 11:38:24,894 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Tribe Hotel-DN 21313.pdf
+2026-03-22 11:38:25,134 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Tribe Hotel-DN 21313.pdf
+2026-03-22 11:38:25,661 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Verum-DN 21336.pdf
+2026-03-22 11:38:25,847 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Verum-DN 21336.pdf
+2026-03-22 11:38:26,390 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Kioko Watamu-DN 21286.pdf
+2026-03-22 11:38:26,680 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 3 lines from Kioko Watamu-DN 21286.pdf
+2026-03-22 11:38:27,202 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Kioko Watamu-DN 21290.pdf
+2026-03-22 11:38:27,407 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Kioko Watamu-DN 21290.pdf
+2026-03-22 11:38:27,949 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: KPS KAREN-DN 21288.pdf
+2026-03-22 11:38:28,364 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 8 lines from KPS KAREN-DN 21288.pdf
+2026-03-22 11:38:28,901 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Listing Samples-DN 21317.pdf
+2026-03-22 11:38:29,115 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Listing Samples-DN 21317.pdf
+2026-03-22 11:38:29,649 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Mutai-DN 21222.pdf
+2026-03-22 11:38:30,528 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 22 lines from Mutai-DN 21222.pdf
+2026-03-22 11:38:31,075 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Muthaiga Country Club-DN 21335.pdf
+2026-03-22 11:38:31,313 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Muthaiga Country Club-DN 21335.pdf
+2026-03-22 11:38:31,861 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Oaks & Corks-DN 21338.pdf
+2026-03-22 11:38:32,307 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 9 lines from Oaks & Corks-DN 21338.pdf
+2026-03-22 11:38:32,830 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - Astrol Square Branch - 2034120003318.pdf
+2026-03-22 11:38:32,939 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Picking Slip - Chandarana - Astrol Square Branch - 2034120003318.pdf
+2026-03-22 11:38:33,475 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
+2026-03-22 11:38:33,647 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 4 lines from Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
+2026-03-22 11:38:34,222 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - Nyali Plaza Branch - 2019120002569.pdf
+2026-03-22 11:38:34,423 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 11 lines from Picking Slip - Chandarana - Nyali Plaza Branch - 2019120002569.pdf
+2026-03-22 11:38:34,979 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - Rhapta Road Branch - 2027120003525.pdf
+2026-03-22 11:38:35,358 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 12 lines from Picking Slip - Chandarana - Rhapta Road Branch - 2027120003525.pdf
+2026-03-22 11:38:35,890 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - Roslyn Rivera Branch - 2014120003351.pdf
+2026-03-22 11:38:36,023 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 3 lines from Picking Slip - Chandarana - Roslyn Rivera Branch - 2014120003351.pdf
+2026-03-22 11:38:36,548 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Chandarana - The Well Branch - 2017120003107.pdf
+2026-03-22 11:38:36,699 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 5 lines from Picking Slip - Chandarana - The Well Branch - 2017120003107.pdf
+2026-03-22 11:38:37,229 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Foursum Ltd - Nairobi Branch - FL05-09-2025.pdf
+2026-03-22 11:38:37,509 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 15 lines from Picking Slip - Foursum Ltd - Nairobi Branch - FL05-09-2025.pdf
+2026-03-22 11:38:38,032 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Jwines Kasarani Enterprises - JWINES05-09-2025.pdf
+2026-03-22 11:38:38,334 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 15 lines from Picking Slip - Jwines Kasarani Enterprises - JWINES05-09-2025.pdf
+2026-03-22 11:38:38,877 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Kioko - Makupa Branch - KI003-09-2025.pdf
+2026-03-22 11:38:39,162 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 15 lines from Picking Slip - Kioko - Makupa Branch - KI003-09-2025.pdf
+2026-03-22 11:38:39,696 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Buru Buru Branch - 032-00047923.pdf
+2026-03-22 11:38:39,897 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 7 lines from Picking Slip - Quick Mart - Buru Buru Branch - 032-00047923.pdf
+2026-03-22 11:38:40,436 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Kiambu Road Branch - 009-00058682.pdf
+2026-03-22 11:38:40,637 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 6 lines from Picking Slip - Quick Mart - Kiambu Road Branch - 009-00058682.pdf
+2026-03-22 11:38:41,160 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Kileleshwa Branch - 063-00055774.pdf
+2026-03-22 11:38:41,371 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 3 lines from Picking Slip - Quick Mart - Kileleshwa Branch - 063-00055774.pdf
+2026-03-22 11:38:41,911 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Kilimani Branch - 036-00053677.pdf
+2026-03-22 11:38:42,083 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 5 lines from Picking Slip - Quick Mart - Kilimani Branch - 036-00053677.pdf
+2026-03-22 11:38:42,612 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Kiserian Branch - 039-00041065.pdf
+2026-03-22 11:38:42,825 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 4 lines from Picking Slip - Quick Mart - Kiserian Branch - 039-00041065.pdf
+2026-03-22 11:38:43,353 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Mfangano Branch - 034-00048842.pdf
+2026-03-22 11:38:43,575 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Picking Slip - Quick Mart - Mfangano Branch - 034-00048842.pdf
+2026-03-22 11:38:44,110 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Nanyuki Branch - 040-00031953.pdf
+2026-03-22 11:38:44,343 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 8 lines from Picking Slip - Quick Mart - Nanyuki Branch - 040-00031953.pdf
+2026-03-22 11:38:44,887 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Narok Branch - 066-00026736.pdf
+2026-03-22 11:38:45,179 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 7 lines from Picking Slip - Quick Mart - Narok Branch - 066-00026736.pdf
+2026-03-22 11:38:45,710 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Pioneer Branch - 043-00044533.pdf
+2026-03-22 11:38:45,841 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 1 lines from Picking Slip - Quick Mart - Pioneer Branch - 043-00044533.pdf
+2026-03-22 11:38:46,382 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Rongai Express Branch - 026-00039463.pdf
+2026-03-22 11:38:46,570 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 2 lines from Picking Slip - Quick Mart - Rongai Express Branch - 026-00039463.pdf
+2026-03-22 11:38:47,111 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Picking Slip - Quick Mart - Waiyaki Way Branch - 015-00043905.pdf
+2026-03-22 11:38:47,291 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Successfully parsed 4 lines from Picking Slip - Quick Mart - Waiyaki Way Branch - 015-00043905.pdf
+2026-03-22 11:38:53,035 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Generating download for company prefix: Batch
+2026-03-22 11:38:53,305 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Generating download for company prefix: Batch
+2026-03-22 11:39:06,304 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Generating download for company prefix: Batch
+2026-03-22 11:39:06,583 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Generating download for company prefix: Batch
+2026-03-22 11:39:30,686 [INFO] [83a19d93-8d54-4e36-b642-cf6672633deb] Processing file: Salty squid-DN 21295.pdf
+2026-03-22 11:39:30,888 [ERROR] [83a19d93-8d54-4e36-b642-cf6672633deb] Error processing Salty squid-DN 21295.pdf: No item rows could be extracted from this PDF.
+2026-03-22 11:40:55,780 [INFO] Created new session store: d0cc251d-aa25-4694-a462-8d593aa7cb0d
+2026-03-22 11:40:55,782 [INFO] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Processing file: Sliquor-DN 23858.pdf
+2026-03-22 11:40:55,995 [INFO] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Successfully parsed 1 lines from Sliquor-DN 23858.pdf
+2026-03-22 11:41:10,273 [INFO] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Processing file: Salty Squid-DN 23882.pdf
+2026-03-22 11:41:10,450 [ERROR] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Error processing Salty Squid-DN 23882.pdf: No item rows could be extracted from this PDF.
