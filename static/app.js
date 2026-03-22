@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <i data-lucide="file-check" class="history-icon"></i>
                         <div class="history-details">
                             <span class="history-name">${item.file.name}</span>
-                            <span class="history-meta">${COMPANY_LABELS[item.company]}</span>
+                            <span class="history-meta">${item.company || 'Unknown Format'}</span>
                         </div>
                     </div>
                     <button class="view-data-btn" onclick="showHistoryItemPreview('${item.id}')">

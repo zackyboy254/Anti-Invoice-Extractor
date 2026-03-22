@@ -47,6 +47,9 @@
                         <span class="chip more">and more onboarding...</span>
                     </div>
                 </div>
+                <button class="btn primary small" id="onboardBtn" onclick="alert('This will trigger the AI-driven autonomous onboarding workflow (Future Feature)')">
+                    <i data-lucide="plus-circle"></i> New Format?
+                </button>
             </div>
 
             <!-- Step 2: Upload -->
@@ -70,7 +73,7 @@
                             <span>Tip: Upload multiple files at once. Max 50 per batch.</span>
                         </div>
 
-                        <button class="btn browse-btn" id="browseBtn" onclick="document.getElementById('fileInput').click()" disabled>
+                        <button class="btn browse-btn" id="browseBtn" onclick="document.getElementById('fileInput').click()">
                             <i data-lucide="folder-open"></i>
                             Select PDFs
                         </button>

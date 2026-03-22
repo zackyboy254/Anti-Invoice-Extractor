@@ -42,11 +42,12 @@ def get_session_writer(session_id: str) -> WebExcelWriter:
         logger.info(f"Created new session store: {session_id}")
     return SESSION_STORES[session_id]
 
-# Map frontend company keys → extractor classes
-COMPANY_EXTRACTORS = {
-    "bmc":    BMCExtractor,
-    "pernod": PernodExtractor,
-}
+# Legacy: Map frontend company keys → extractor classes
+# (Replaced by ExtractorFactory.get_extractor in /process for auto-detection)
+# COMPANY_EXTRACTORS = {
+#     "bmc":    BMCExtractor,
+#     "pernod": PernodExtractor,
+# }
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui(request: Request):

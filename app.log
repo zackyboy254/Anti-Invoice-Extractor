@@ -41,3 +41,10 @@
 2026-03-22 10:57:58,610 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 4 lines from Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
 2026-03-22 10:58:40,932 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
 2026-03-22 10:58:41,072 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
+2026-03-22 11:11:18,267 [INFO] Created new session store: 96fbd8f3-29d4-4389-a208-25e7bbd3e2a3
+2026-03-22 11:11:18,283 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Processing file: Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
+2026-03-22 11:11:18,898 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Successfully parsed 4 lines from Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
+2026-03-22 11:11:39,869 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Processing file: Verum-DN 21336.pdf
+2026-03-22 11:11:40,204 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Successfully parsed 1 lines from Verum-DN 21336.pdf
+2026-03-22 11:11:44,765 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Generating download for company prefix: Batch
+2026-03-22 11:11:46,182 [INFO] [96fbd8f3-29d4-4389-a208-25e7bbd3e2a3] Generating download for company prefix: Batch
