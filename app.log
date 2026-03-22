@@ -163,3 +163,11 @@
 2026-03-22 11:46:57,393 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Successfully parsed 1 lines from Salty Squid-DN 23882.pdf
 2026-03-22 11:47:11,113 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Generating download for company prefix: Batch
 2026-03-22 11:47:11,201 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Generating download for company prefix: Batch
+2026-03-22 11:51:21,412 [INFO] Created new session store: 3bcb7e8d-250d-46b1-a1cc-f84adebdd7a7
+2026-03-22 11:51:21,413 [INFO] [3bcb7e8d-250d-46b1-a1cc-f84adebdd7a7] Processing file: Talisman-FFK-DN 21309.pdf
+2026-03-22 11:51:21,583 [INFO] [3bcb7e8d-250d-46b1-a1cc-f84adebdd7a7] Successfully parsed 1 lines from Talisman-FFK-DN 21309.pdf
+2026-03-22 11:51:23,126 [INFO] [3bcb7e8d-250d-46b1-a1cc-f84adebdd7a7] Generating download for company prefix: Batch
+2026-03-22 11:51:23,329 [INFO] [3bcb7e8d-250d-46b1-a1cc-f84adebdd7a7] Generating download for company prefix: Batch
+2026-03-22 11:51:53,736 [INFO] Created new session store: 0bf965be-d338-462b-a9f4-9a0635caa9f9
+2026-03-22 11:51:53,738 [INFO] [0bf965be-d338-462b-a9f4-9a0635caa9f9] Processing file: Tamarind Limited-DN 21314.pdf
+2026-03-22 11:51:53,969 [INFO] [0bf965be-d338-462b-a9f4-9a0635caa9f9] Successfully parsed 1 lines from Tamarind Limited-DN 21314.pdf

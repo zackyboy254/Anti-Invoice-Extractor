@@ -306,6 +306,63 @@ document.addEventListener("DOMContentLoaded", () => {
         // The user can close the modal and either add more files or reset manually.
     });
 
+    // ── AI Onboarding Logic ──────────────────────────────────────
+    const onboardModal  = document.getElementById("onboardModal");
+    const onboardForm   = document.getElementById("onboardForm");
+    const onboardStatus = document.getElementById("onboardStatus");
+    const onboardSubmit = document.getElementById("onboardSubmitBtn");
+
+    window.openOnboard = function() {
+        onboardModal.classList.remove("hidden");
+    };
+
+    window.closeOnboard = function() {
+        onboardModal.classList.add("hidden");
+        onboardForm.reset();
+        onboardStatus.classList.add("hidden");
+    };
+
+    onboardForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const companyName = document.getElementById("onboardCompanyName").value;
+        const sampleFile  = document.getElementById("onboardSampleFile").files[0];
+
+        if (!sampleFile) return;
+
+        // Show status
+        onboardStatus.classList.remove("hidden");
+        onboardSubmit.disabled = true;
+
+        const formData = new FormData();
+        formData.append("file", sampleFile);
+        formData.append("company_name", companyName);
+
+        try {
+            const res = await fetch("/onboard", { method: "POST", body: formData });
+            const data = await res.json();
+
+            if (res.ok) {
+                alert(data.message);
+                closeOnboard();
+                
+                // Add a visual indicator to the banner (simulated refresh of knowledge)
+                const moreChip = document.querySelector(".chip.more");
+                const newChip  = document.createElement("span");
+                newChip.className = `chip ${data.company_key}`;
+                newChip.textContent = companyName;
+                moreChip.parentNode.insertBefore(newChip, moreChip);
+            } else {
+                throw new Error(data.detail || "Onboarding failed");
+            }
+        } catch (err) {
+            alert("Error: " + err.message);
+        } finally {
+            onboardStatus.classList.add("hidden");
+            onboardSubmit.disabled = false;
+        }
+    });
+
     // ── Session & History Management ──────────────────────────────
     async function clearSession() {
         // 1. History is now updated in real-time in processQueue.
