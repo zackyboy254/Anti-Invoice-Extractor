@@ -18,11 +18,11 @@ class TemplateExtractor(BaseExtractor):
 
     def extract(self) -> list[dict]:
         with pdfplumber.open(self.pdf_source) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text()
-                if not text:
-                    continue
-                self._parse_page_text(text)
+            # Merge all pages into a continuous string so that multi-page tables and 
+            # separated multi-line rows simply appear as one large block seamlessly.
+            full_text = "\n".join([page.extract_text() for page in pdf.pages if page.extract_text()])
+            if full_text:
+                self._parse_page_text(full_text)
                 
         return self.extracted_items
 
