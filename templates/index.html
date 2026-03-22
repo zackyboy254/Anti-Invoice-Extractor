@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
     <div class="app-container">
@@ -44,10 +46,9 @@
                     <div class="format-chips">
                         <span class="chip bmc">Biashara Merchant Co.</span>
                         <span class="chip pernod">Pernod Ricard</span>
-                        <span class="chip more">and more onboarding...</span>
+                        <span class="chip more">and more...</span>
                     </div>
                 </div>
-                <!-- AI Onboarding Button Removed -->
             </div>
 
             <!-- Step 2: Upload -->
@@ -71,7 +72,8 @@
                             <span>Tip: Upload multiple files at once. Max 50 per batch.</span>
                         </div>
 
-                        <button class="btn browse-btn" id="browseBtn" onclick="document.getElementById('fileInput').click()">
+                        <button class="btn browse-btn" id="browseBtn"
+                            onclick="document.getElementById('fileInput').click()">
                             <i data-lucide="folder-open"></i>
                             Select PDFs
                         </button>
@@ -99,12 +101,14 @@
             </div>
 
         </main>
-        
+
         <footer class="app-footer">
-            <p>am here always for you 🤖</p>
+            <p>Am always here for you BUDDY 🤖.....</p>
         </footer>
     </div>
 
+
+    <div class="app-container">
 
     <!-- Preview Modal -->
     <div class="modal-overlay hidden" id="previewModal">
@@ -121,7 +125,7 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            
+
             <div class="preview-modal-body">
                 <div class="table-responsive">
                     <table id="previewTable">
@@ -163,7 +167,7 @@
                     <i data-lucide="x"></i>
                 </button>
             </div>
-            
+
             <div class="history-modal-body">
                 <div class="history-list" id="historyList">
                     <!-- JS populates this -->
@@ -193,7 +197,7 @@
                 <h2>Extraction Complete!</h2>
                 <p id="modalMessage">All files have been successfully processed and are ready for download.</p>
             </div>
-            
+
             <div class="modal-body">
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -227,4 +231,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

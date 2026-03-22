@@ -302,8 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
         modalDownloadBtn.innerHTML = '<i data-lucide="check"></i> Downloaded';
         lucide.createIcons();
 
-        // Note: We no longer auto-reset the session here to prevent the "No files processed" error.
-        // The user can close the modal and either add more files or reset manually.
+        // Close the modal automatically after triggering the download
+        setTimeout(() => {
+            closeSuccess();
+        }, 800);
     });
 
 

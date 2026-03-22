@@ -194,3 +194,75 @@
 2026-03-22 12:04:51,661 [ERROR] [08ba9d14-5943-496c-9016-130760b2e32d] Error processing SO334001176.pdf: No item rows could be extracted from this PDF.
 2026-03-22 12:04:51,680 [INFO] [08ba9d14-5943-496c-9016-130760b2e32d] Processing file: 790002880 MAF.pdf
 2026-03-22 12:04:51,826 [ERROR] [08ba9d14-5943-496c-9016-130760b2e32d] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:10:12,807 [INFO] Created new session store: 1b1c5f22-e34f-43ab-9199-ebd2f007d2c4
+2026-03-22 12:10:12,808 [INFO] [1b1c5f22-e34f-43ab-9199-ebd2f007d2c4] Processing file: Salty Squid-DN 23882.pdf
+2026-03-22 12:10:12,976 [INFO] [1b1c5f22-e34f-43ab-9199-ebd2f007d2c4] Successfully parsed 1 lines from Salty Squid-DN 23882.pdf
+2026-03-22 12:10:13,496 [INFO] [1b1c5f22-e34f-43ab-9199-ebd2f007d2c4] Processing file: Salty squid-DN 21295.pdf
+2026-03-22 12:10:13,613 [INFO] [1b1c5f22-e34f-43ab-9199-ebd2f007d2c4] Successfully parsed 1 lines from Salty squid-DN 21295.pdf
+2026-03-22 12:17:12,887 [INFO] Generating heuristic fallback AI template for: Karcher Limited
+2026-03-22 12:17:12,898 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\karcher_limited.json
+2026-03-22 12:17:12,899 [INFO] Successfully onboarded new company format: Karcher Limited
+2026-03-22 12:17:21,506 [INFO] Created new session store: dcd8e2a3-60e8-402e-bf0a-854387a375f2
+2026-03-22 12:17:21,507 [INFO] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Processing file: 790002880 MAF.pdf
+2026-03-22 12:17:21,794 [ERROR] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Error processing 790002880 MAF.pdf: No item rows could be extracted from this PDF.
+2026-03-22 12:17:23,792 [INFO] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Processing file: 790002880 MAF.pdf
+2026-03-22 12:17:24,044 [ERROR] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Error processing 790002880 MAF.pdf: No item rows could be extracted from this PDF.
+2026-03-22 12:19:40,755 [INFO] Created new session store: dcd8e2a3-60e8-402e-bf0a-854387a375f2
+2026-03-22 12:19:40,757 [INFO] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Processing file: 790002880 MAF.pdf
+2026-03-22 12:19:40,853 [ERROR] [dcd8e2a3-60e8-402e-bf0a-854387a375f2] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:22:07,764 [INFO] Generating heuristic fallback AI template for: Karcher Limited
+2026-03-22 12:22:07,777 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\karcher_limited.json
+2026-03-22 12:22:07,778 [INFO] Successfully onboarded new company format: Karcher Limited
+2026-03-22 12:22:16,892 [INFO] Created new session store: 488982e2-37a6-4601-9b40-c9c1a2c9c60a
+2026-03-22 12:22:16,893 [INFO] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Processing file: 790002880 MAF.pdf
+2026-03-22 12:22:17,080 [ERROR] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:22:18,608 [INFO] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Processing file: 790002880 MAF.pdf
+2026-03-22 12:22:18,720 [ERROR] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:22:19,514 [INFO] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Processing file: 790002880 MAF.pdf
+2026-03-22 12:22:19,693 [ERROR] [488982e2-37a6-4601-9b40-c9c1a2c9c60a] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:24:05,855 [INFO] Generating heuristic fallback AI template for: Karcher Limited
+2026-03-22 12:24:05,862 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\karcher_limited.json
+2026-03-22 12:24:05,864 [INFO] Successfully onboarded new company format: Karcher Limited
+2026-03-22 12:24:13,873 [INFO] Created new session store: efcb9764-9898-4cec-b53f-b90d81de8b8a
+2026-03-22 12:24:13,875 [INFO] [efcb9764-9898-4cec-b53f-b90d81de8b8a] Processing file: 790002880 MAF.pdf
+2026-03-22 12:24:14,001 [ERROR] [efcb9764-9898-4cec-b53f-b90d81de8b8a] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:24:30,569 [INFO] Created new session store: efcb9764-9898-4cec-b53f-b90d81de8b8a
+2026-03-22 12:24:30,570 [INFO] [efcb9764-9898-4cec-b53f-b90d81de8b8a] Processing file: 790002880 MAF.pdf
+2026-03-22 12:24:30,681 [ERROR] [efcb9764-9898-4cec-b53f-b90d81de8b8a] Error processing 790002880 MAF.pdf: Unsupported invoice format. No matching extractor found.
+2026-03-22 12:26:37,107 [INFO] Generating heuristic fallback AI template for: Azelis
+2026-03-22 12:26:37,125 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\azelis.json
+2026-03-22 12:26:37,128 [INFO] Successfully onboarded new company format: Azelis
+2026-03-22 12:26:52,622 [INFO] Created new session store: e9870f94-557b-4ac0-be18-27865c9a1edc
+2026-03-22 12:26:52,624 [INFO] [e9870f94-557b-4ac0-be18-27865c9a1edc] Processing file: SO334001176.pdf
+2026-03-22 12:27:12,155 [ERROR] [e9870f94-557b-4ac0-be18-27865c9a1edc] Error processing SO334001176.pdf: No item rows could be extracted from this PDF.
+2026-03-22 12:30:06,370 [ERROR] Failed to query Gemini API: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.. Falling back to default heuristic rules.
+2026-03-22 12:30:06,372 [INFO] Generating heuristic fallback AI template for: Azelis
+2026-03-22 12:30:06,381 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\azelis.json
+2026-03-22 12:30:06,382 [INFO] Successfully onboarded new company format: Azelis
+2026-03-22 12:30:28,484 [INFO] Created new session store: e8633b6a-7dbc-47ea-a19c-723916772c62
+2026-03-22 12:30:28,485 [INFO] [e8633b6a-7dbc-47ea-a19c-723916772c62] Processing file: SO334001176.pdf
+2026-03-22 12:30:57,514 [ERROR] [e8633b6a-7dbc-47ea-a19c-723916772c62] Error processing SO334001176.pdf: No item rows could be extracted from this PDF.
+2026-03-22 12:43:38,802 [INFO] Created new session store: 17a47345-518a-4eb2-9437-3147134ebabe
+2026-03-22 12:43:38,805 [INFO] [17a47345-518a-4eb2-9437-3147134ebabe] Processing file: Talisman-FFK-DN 21307.pdf
+2026-03-22 12:43:39,134 [INFO] [17a47345-518a-4eb2-9437-3147134ebabe] Successfully parsed 1 lines from Talisman-FFK-DN 21307.pdf
+2026-03-22 12:46:56,916 [INFO] AFC is enabled with max remote calls: 10.
+2026-03-22 12:47:27,142 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-03-22 12:47:27,156 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\azelis_kenya_limited.json
+2026-03-22 12:47:27,157 [INFO] Successfully onboarded new company format: Azelis Kenya Limited
+2026-03-22 12:48:03,674 [INFO] Created new session store: b090b7af-9dd4-4e02-8371-e23d4ab670eb
+2026-03-22 12:48:03,678 [INFO] [b090b7af-9dd4-4e02-8371-e23d4ab670eb] Processing file: SO334001176.pdf
+2026-03-22 12:48:37,647 [ERROR] [b090b7af-9dd4-4e02-8371-e23d4ab670eb] Error processing SO334001176.pdf: No item rows could be extracted from this PDF.
+2026-03-22 12:52:14,510 [INFO] AFC is enabled with max remote calls: 10.
+2026-03-22 12:53:00,770 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-03-22 12:53:00,809 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\azelis_kenya_limited.json
+2026-03-22 12:53:00,812 [INFO] Successfully onboarded new company format: Azelis Kenya Limited
+2026-03-22 12:53:13,643 [INFO] Created new session store: 80521c72-5c95-43b5-8b50-82a7f36b8fbc
+2026-03-22 12:53:13,654 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Processing file: SO334001176.pdf
+2026-03-22 12:53:14,971 [ERROR] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Error processing SO334001176.pdf: look-behind requires fixed-width pattern
+2026-03-22 12:53:25,324 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Processing file: SO334001176.pdf
+2026-03-22 12:53:26,556 [ERROR] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Error processing SO334001176.pdf: look-behind requires fixed-width pattern
+2026-03-22 12:54:54,321 [INFO] Created new session store: 80521c72-5c95-43b5-8b50-82a7f36b8fbc
+2026-03-22 12:54:54,327 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Processing file: SO334001176.pdf
+2026-03-22 12:55:59,669 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Successfully parsed 3 lines from SO334001176.pdf
+2026-03-22 12:56:07,228 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Generating download for company prefix: Batch
+2026-03-22 12:56:07,620 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Generating download for company prefix: Batch

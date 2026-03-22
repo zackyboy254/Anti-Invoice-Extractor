@@ -1,0 +1,25 @@
+{
+    "company_name": "Azelis Kenya Limited",
+    "company_key": "azelis_kenya_limited",
+    "detection_keywords": [
+        "Azelis Kenya Limited"
+    ],
+    "header_rules": {
+        "order_number": "Our cont\\/Ord no : (SO\\d+)",
+        "date": "Document Date : (\\d{2}\\/\\d{2}\\/\\d{4})",
+        "customer_name": "Invoice Address: \\(\\d{10}\\)\\s*\\n\\s*([A-Za-z0-9\\s\\.\\(\\)-]+)"
+    },
+    "line_item_rules": {
+        "header_trigger": "Item no Text Quantity/Packs Price VAT% Amount",
+        "stop_trigger": "VAT% Basis VAT amount Total / KES",
+        "row_pattern": "(?m)^(\\d{6}-)\\s*([A-Za-z0-9\\s\\.-]+?)\\s+([\\d\\.,]+)\\s*(kg|g|l|pcs)\\s+[\\d\\.,]+\\s*\\/1\\s*(?:kg|g|l|pcs)\\s+[\\d\\.,]+\\s*\\n(?:[A-Z0-9]{13,}\\s+[\\d\\.,]+\\s+kg\\s+Plastic\\s+Bag\\s+\\(\\d+\\))?(?:[\\s\\S]*?\\nGross\\s+weight\\s*:\\s*([\\d\\.,]+))?(?:[\\s\\S]*?\\nQuantity:\\s*([\\d\\.,]+)(?:kg|g|l|pcs)?)?",
+        "column_map": {
+            "product_code": 1,
+            "product_description": 2,
+            "units": 3,
+            "uom": 4,
+            "qty_ordered": 5,
+            "weight": 6
+        }
+    }
+}
