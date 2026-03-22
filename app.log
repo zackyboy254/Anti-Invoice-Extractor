@@ -171,3 +171,12 @@
 2026-03-22 11:51:53,736 [INFO] Created new session store: 0bf965be-d338-462b-a9f4-9a0635caa9f9
 2026-03-22 11:51:53,738 [INFO] [0bf965be-d338-462b-a9f4-9a0635caa9f9] Processing file: Tamarind Limited-DN 21314.pdf
 2026-03-22 11:51:53,969 [INFO] [0bf965be-d338-462b-a9f4-9a0635caa9f9] Successfully parsed 1 lines from Tamarind Limited-DN 21314.pdf
+2026-03-22 11:58:25,944 [ERROR] Onboarding error: name 'pdfplumber' is not defined
+2026-03-22 11:58:30,298 [ERROR] Onboarding error: name 'pdfplumber' is not defined
+2026-03-22 11:58:52,177 [ERROR] Onboarding error: name 'pdfplumber' is not defined
+2026-03-22 11:59:45,010 [INFO] Generating AI template for: Azelis
+2026-03-22 11:59:45,039 [INFO] Saved new template: C:\Users\PeterKaranja\OneDrive - Freight Forwarders Kenya Ltd\NewOrleans\Anti Invoice Extractor\extractors\company_rules\azelis.json
+2026-03-22 11:59:45,041 [INFO] Successfully onboarded new company format: Azelis
+2026-03-22 12:00:06,465 [INFO] Created new session store: ae924d99-e521-4de6-bcb9-e59949bede78
+2026-03-22 12:00:06,480 [INFO] [ae924d99-e521-4de6-bcb9-e59949bede78] Processing file: SO334001176.pdf
+2026-03-22 12:00:42,782 [ERROR] [ae924d99-e521-4de6-bcb9-e59949bede78] Error processing SO334001176.pdf: No item rows could be extracted from this PDF.
