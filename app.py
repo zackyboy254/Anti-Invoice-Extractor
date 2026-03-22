@@ -69,16 +69,15 @@ async def reset_backend(session_id: str = Form(...)):
 @app.post("/process")
 async def process_file(
     file: UploadFile = File(...),
-    company: Optional[str] = Form(None),   # "bmc" | "pernod" from the dropdown
     file_id: str = Form(...),              # Frontend-generated unique ID for line removal
     session_id: str = Form(...),           # Unique browser session ID
 ):
     """
-    Processes a single PDF file, extracts data, and appends it to the 
-    Excel buffer for the specific session.
+    Processes a single PDF file, automatically detects the company format, 
+    extracts data, and appends it to the Excel buffer for the specific session.
     """
     writer = get_session_writer(session_id)
-    logger.info(f"[{session_id}] Processing file: {file.filename} (Company: {company or 'Auto'})")
+    logger.info(f"[{session_id}] Processing file: {file.filename}")
 
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
@@ -87,12 +86,9 @@ async def process_file(
         contents  = await file.read()
         pdf_source = io.BytesIO(contents)
 
-        # Use explicit company choice when available, otherwise auto-detect
-        if company and company in COMPANY_EXTRACTORS:
-            extractor = COMPANY_EXTRACTORS[company](pdf_source)
-            print(f"Using selected extractor: {company} for {file.filename}")
-        else:
-            extractor = ExtractorFactory.get_extractor(pdf_source)
+        # Automatically detect the company format using the Factory
+        extractor = ExtractorFactory.get_extractor(pdf_source)
+        company_name = extractor.company_name
 
         extracted_data = extractor.extract()
 
@@ -110,9 +106,10 @@ async def process_file(
         time.sleep(0.5)  # keeps the progress bar from blinking too fast
 
         return {
-            "status":  "success",
-            "message": f"Parsed {len(extracted_data)} line(s)",
-            "company": extractor.company_name,
+            "status": "success",
+            "message": f"Successfully extracted {len(extracted_data)} rows",
+            "company": company_name,
+            "company_key": getattr(extractor, 'company_key', company_name.lower().replace(' ', '_')),
             "extracted_data": extracted_data
         }
 
@@ -143,15 +140,9 @@ async def download_excel(session_id: str, company: Optional[str] = None):
     excel_stream = writer.get_excel_bytes()
     logger.info(f"[{session_id}] Generating download for company prefix: {company or 'Batch'}")
 
-    # Determine filename prefix
-    prefix = "Invoices"
-    if company:
-        # Sanitize prefix (alphanumeric and underscores only)
-        prefix = "".join(c if c.isalnum() else "_" for c in company).strip("_")
-        if not prefix: prefix = "Invoices"
-    
+    # Standard filename format: Data_Extracted_{timestamp}.xlsx
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{prefix}_Extracted_{timestamp}.xlsx"
+    filename = f"Invoice_Data_Extracted_{timestamp}.xlsx"
 
     return StreamingResponse(
         excel_stream,

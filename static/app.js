@@ -9,14 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropzoneTitle    = document.getElementById("dropzoneTitle");
     const dropzoneSubtitle = document.getElementById("dropzoneSubtitle");
     
-    // Select Elements
-    const selectTrigger  = document.getElementById("selectTrigger");
-    const selectOptions  = document.getElementById("selectOptions");
-    const selectedDisplay = document.getElementById("selectedDisplay");
-    const selectedIcon    = document.getElementById("selectedIcon");
-    const selectedBar     = document.getElementById("selectedBar");
-    const selectedLabel   = document.getElementById("selectedLabel");
-
     // Modal Elements
     const successModal     = document.getElementById("successModal");
     const previewModal     = document.getElementById("previewModal");
@@ -26,95 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const countSuccess      = document.getElementById("countSuccess");
     const countError        = document.getElementById("countError");
 
-    let selectedCompany = null;   // "bmc" | "pernod"
     let uploadQueue     = [];
     let sessionHistory  = [];     // Track all successful extractions in this session
     let isProcessing    = false;
     let completedCount  = 0;
-
-    // History Elements
-    const historyModal      = document.getElementById("historyModal");
-    const historyList       = document.getElementById("historyList");
-    const historyEmptyState = document.getElementById("historyEmptyState");
 
     const COMPANY_LABELS = {
         bmc:    "Biashara Merchant Co.",
         pernod: "Pernod Ricard"
     };
 
-    // ── Dropdown Logic ───────────────────────────────────────────
-    window.toggleDropdown = function() {
-        selectOptions.classList.toggle("hidden");
-        selectTrigger.classList.toggle("active");
-    };
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", (e) => {
-        if (!selectTrigger.contains(e.target) && !selectOptions.contains(e.target)) {
-            selectOptions.classList.add("hidden");
-            selectTrigger.classList.remove("active");
-        }
-    });
-
-    window.selectCompany = function(id, name, icon) {
-        selectedCompany = id;
-        
-        // Update Trigger UI
-        selectedDisplay.textContent = name;
-        selectedIcon.setAttribute("data-lucide", icon);
-        
-        // Update Options UI (Radios)
-        document.querySelectorAll(".option").forEach(opt => {
-            const isSelected = opt.getAttribute("onclick").includes(`'${id}'`);
-            opt.classList.toggle("selected", isSelected);
-        });
-
-        // Show confirmation bar
-        selectedBar.classList.remove("hidden");
-        selectedLabel.textContent = `Processing for: ${name}`;
-
-        // Unlock upload zone
-        unlockDropzone();
-        
-        // Close dropdown
-        selectOptions.classList.add("hidden");
-        selectTrigger.classList.remove("active");
-        
-        lucide.createIcons();
-    };
-
-    window.clearCompany = function() {
-        selectedCompany = null;
-        selectedDisplay.textContent = "Select a company...";
-        selectedIcon.setAttribute("data-lucide", "building-2");
-        
-        document.querySelectorAll(".option").forEach(opt => opt.classList.remove("selected"));
-        selectedBar.classList.add("hidden");
-        
-        lockDropzone();
-        lucide.createIcons();
-    };
-
-    function unlockDropzone() {
-        dropzone.classList.remove("locked");
-        fileInput.disabled = false;
-        browseBtn.disabled = false;
-        dropzoneTitle.textContent = "Drag & Drop Invoices Here";
-        dropzoneSubtitle.textContent = `Target: ${COMPANY_LABELS[selectedCompany]}`;
-    }
-
-    function lockDropzone() {
-        dropzone.classList.add("locked");
-        fileInput.disabled = true;
-        browseBtn.disabled = true;
-        dropzoneTitle.textContent = "Select a company first";
-        dropzoneSubtitle.textContent = "Complete Step 1 above before uploading files.";
-    }
 
     // ── Dropzone Events ──────────────────────────────────────────
     dropzone.addEventListener("dragover", (e) => {
         e.preventDefault();
-        if (!selectedCompany) return;
         dropzone.classList.add("dragover");
     });
 
@@ -125,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     dropzone.addEventListener("drop", (e) => {
         e.preventDefault();
         dropzone.classList.remove("dragover");
-        if (!selectedCompany) return;
         handleFiles(e.dataTransfer.files);
     });
 
@@ -136,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ── File Handling ─────────────────────────────────────────────
     function handleFiles(files) {
-        if (!selectedCompany) return;
 
         if (files.length > 50) {
             alert("Maximum 50 files allowed per batch.");
@@ -164,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         processingSection.classList.remove("hidden");
-        queuePill.textContent = COMPANY_LABELS[selectedCompany];
+        queuePill.textContent = "Auto-Detecting Formats";
 
         newFiles.forEach(file => {
             const fileId  = "file-" + Math.random().toString(36).substr(2, 9);
@@ -172,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 id: fileId, 
                 file, 
                 status: "pending", 
-                company: selectedCompany,
+                company: null, // To be detected by backend
                 extractedData: [] 
             };
             uploadQueue.push(fileObj);
@@ -285,10 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.triggerDownload = function() {
-        // Trigger modal download logic (using the first successful company label or "Batch")
-        const successfulItem = uploadQueue.find(i => i.status === "success");
-        const companyLabel = successfulItem ? COMPANY_LABELS[successfulItem.company] : "Batch";
-        window.location.href = `/download?session_id=${SESSION_ID}&company=${encodeURIComponent(companyLabel)}`;
+        window.location.href = `/download?session_id=${SESSION_ID}`;
         
         // After download, we don't clear session automatically anymore to avoid race conditions.
         // The user can use the "Reset" button in Step 1 to start fresh.
@@ -312,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData();
         formData.append("file", item.file);
         formData.append("file_id", item.id); // Send unique ID for tracking
-        formData.append("company", item.company);
         formData.append("session_id", SESSION_ID); // Track session
 
         try {
@@ -322,7 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (res.ok) {
                 item.status = "success";
                 item.extractedData = data.extracted_data || [];
+                item.company = data.company_key || "unknown"; // Store detected company
                 updateItemUI(item.id, "success", data.message);
+                
+                // Update company name in UI if needed (dynamic label)
+                const statusTxt = document.getElementById(`status-text-${item.id}`);
+                statusTxt.innerText = `${data.company || 'Extracted'}: ${data.message}`;
             } else {
                 throw new Error(data.detail || "Error");
             }
@@ -396,9 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     modalDownloadBtn.addEventListener("click", () => {
-        // Trigger download with company query param and session_id
-        const companyParam = encodeURIComponent(COMPANY_LABELS[selectedCompany] || "Invoices");
-        window.location.href = `/download?session_id=${SESSION_ID}&company=${companyParam}`;
+        window.location.href = `/download?session_id=${SESSION_ID}`;
         
         // Show success state on button
         modalDownloadBtn.classList.add("success");
@@ -430,8 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
         isProcessing   = false;
 
         // 4. Reset UI
-        clearCompany(); // Resets Step 1 and Step 2
-        
         processingSection.classList.add("hidden");
         successModal.classList.add("hidden");
         queueList.innerHTML = "";

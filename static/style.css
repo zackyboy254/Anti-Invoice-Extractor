@@ -894,6 +894,69 @@ tr:last-child td {
     width: 13px;
     height: 13px;
 }
+/* ── Status Banner ───────────────────────────────────────────── */
+.status-banner {
+    padding: 1.25rem 1.75rem;
+    border-left: 4px solid var(--primary);
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.banner-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.banner-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.banner-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.format-chips {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chip.bmc {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+}
+
+.chip.pernod {
+    background: rgba(139, 92, 246, 0.1);
+    color: #a78bfa;
+}
+
+.chip.more {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-style: italic;
+    font-weight: 400;
+}
+
 /* ── Footer ─────────────────────────────────────────────────── */
 .app-footer {
     margin-top: 4rem;

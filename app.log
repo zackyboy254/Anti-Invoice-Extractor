@@ -1,3 +1,43 @@
 2026-03-22 10:20:59,309 [INFO] Created new session store: bf50f6b4-21c5-43f1-96fc-fa9fc5cd5237
 2026-03-22 10:20:59,317 [INFO] [bf50f6b4-21c5-43f1-96fc-fa9fc5cd5237] Processing file: Picking Slip - Chandarana - Nyali Plaza Branch - 2019120002569.pdf (Company: pernod)
 2026-03-22 10:20:59,740 [INFO] [bf50f6b4-21c5-43f1-96fc-fa9fc5cd5237] Successfully parsed 11 lines from Picking Slip - Chandarana - Nyali Plaza Branch - 2019120002569.pdf
+2026-03-22 10:27:58,074 [INFO] Created new session store: 99646235-4473-4825-bacc-600c63b82751
+2026-03-22 10:27:58,084 [INFO] [99646235-4473-4825-bacc-600c63b82751] Processing file: Take Home Sales-SKAL-DN 21342.pdf (Company: bmc)
+2026-03-22 10:27:58,714 [INFO] [99646235-4473-4825-bacc-600c63b82751] Successfully parsed 2 lines from Take Home Sales-SKAL-DN 21342.pdf
+2026-03-22 10:38:52,478 [INFO] Created new session store: d953216f-22ed-4d33-ad60-da36d43fa820
+2026-03-22 10:38:52,491 [INFO] [d953216f-22ed-4d33-ad60-da36d43fa820] Processing file: Sliquor-DN 23860.pdf (Company: bmc)
+2026-03-22 10:38:52,858 [INFO] [d953216f-22ed-4d33-ad60-da36d43fa820] Successfully parsed 1 lines from Sliquor-DN 23860.pdf
+2026-03-22 10:39:10,033 [INFO] [d953216f-22ed-4d33-ad60-da36d43fa820] Generating download for company prefix: Biashara Merchant Co.
+2026-03-22 10:39:10,164 [INFO] Reset session store: d953216f-22ed-4d33-ad60-da36d43fa820
+2026-03-22 10:44:22,796 [INFO] Created new session store: d953216f-22ed-4d33-ad60-da36d43fa820
+2026-03-22 10:44:22,806 [INFO] [d953216f-22ed-4d33-ad60-da36d43fa820] Processing file: Shan Punjab-DN 21276.pdf (Company: bmc)
+2026-03-22 10:44:23,030 [INFO] [d953216f-22ed-4d33-ad60-da36d43fa820] Successfully parsed 3 lines from Shan Punjab-DN 21276.pdf
+2026-03-22 10:55:36,176 [INFO] Created new session store: eb8b49d5-2bde-4b82-bc57-ba2731505d93
+2026-03-22 10:55:36,190 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tamarind Carnivore-DN 21294.pdf (Company: pernod)
+2026-03-22 10:55:36,545 [ERROR] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Error processing Tamarind Carnivore-DN 21294.pdf: No item rows could be extracted from this PDF.
+2026-03-22 10:55:55,576 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tribe Hotel-DN 21313.pdf (Company: pernod)
+2026-03-22 10:55:55,912 [ERROR] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Error processing Tribe Hotel-DN 21313.pdf: No item rows could be extracted from this PDF.
+2026-03-22 10:56:00,822 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tribe Hotel-DN 21313.pdf (Company: pernod)
+2026-03-22 10:56:01,092 [ERROR] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Error processing Tribe Hotel-DN 21313.pdf: No item rows could be extracted from this PDF.
+2026-03-22 10:56:02,302 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tribe Hotel-DN 21313.pdf (Company: pernod)
+2026-03-22 10:56:02,568 [ERROR] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Error processing Tribe Hotel-DN 21313.pdf: No item rows could be extracted from this PDF.
+2026-03-22 10:56:03,053 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tribe Hotel-DN 21313.pdf (Company: pernod)
+2026-03-22 10:56:03,256 [ERROR] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Error processing Tribe Hotel-DN 21313.pdf: No item rows could be extracted from this PDF.
+2026-03-22 10:56:16,174 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Talisman-FFK-DN 21307.pdf (Company: bmc)
+2026-03-22 10:56:16,471 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 1 lines from Talisman-FFK-DN 21307.pdf
+2026-03-22 10:56:33,577 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Verum-DN 21336.pdf (Company: bmc)
+2026-03-22 10:56:33,805 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 1 lines from Verum-DN 21336.pdf
+2026-03-22 10:56:34,351 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tribe Hotel-DN 21313.pdf (Company: bmc)
+2026-03-22 10:56:34,668 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 1 lines from Tribe Hotel-DN 21313.pdf
+2026-03-22 10:56:35,212 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tamarind Limited-DN 21314.pdf (Company: bmc)
+2026-03-22 10:56:35,468 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 1 lines from Tamarind Limited-DN 21314.pdf
+2026-03-22 10:56:36,003 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Tamarind Carnivore-DN 21294.pdf (Company: bmc)
+2026-03-22 10:56:36,461 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 2 lines from Tamarind Carnivore-DN 21294.pdf
+2026-03-22 10:56:37,003 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Talisman-FFK-DN 21309.pdf (Company: bmc)
+2026-03-22 10:56:37,207 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 1 lines from Talisman-FFK-DN 21309.pdf
+2026-03-22 10:57:09,349 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
+2026-03-22 10:57:09,594 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
+2026-03-22 10:57:58,422 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Processing file: Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf (Company: pernod)
+2026-03-22 10:57:58,610 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Successfully parsed 4 lines from Picking Slip - Chandarana - Mobil Plaza Branch - 2003120003311.pdf
+2026-03-22 10:58:40,932 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
+2026-03-22 10:58:41,072 [INFO] [eb8b49d5-2bde-4b82-bc57-ba2731505d93] Generating download for company prefix: Biashara Merchant Co.
