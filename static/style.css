@@ -894,3 +894,25 @@ tr:last-child td {
     width: 13px;
     height: 13px;
 }
+/* ── Footer ─────────────────────────────────────────────────── */
+.app-footer {
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+.app-footer p {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    opacity: 0.6;
+}
+
+/* ── Success State for Modal Download ────────────────────────── */
+.btn.primary.success {
+    background: var(--success);
+    border-color: var(--success);
+}

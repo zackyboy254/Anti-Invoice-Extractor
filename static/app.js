@@ -243,6 +243,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const globalDownloadBtn = document.getElementById("globalDownloadBtn");
         if (globalDownloadBtn) {
             globalDownloadBtn.classList.toggle("hidden", !hasSuccess);
+            
+            // Disable until all files in queue are processed (success or error)
+            const allDone = uploadQueue.every(i => i.status === "success" || i.status === "error");
+            globalDownloadBtn.disabled = !allDone;
         }
     }
 
@@ -286,8 +290,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const companyLabel = successfulItem ? COMPANY_LABELS[successfulItem.company] : "Batch";
         window.location.href = `/download?session_id=${SESSION_ID}&company=${encodeURIComponent(companyLabel)}`;
         
-        // After download, show success summary again? No, just clear session as per user preference
-        setTimeout(() => clearSession(), 1500);
+        // After download, we don't clear session automatically anymore to avoid race conditions.
+        // The user can use the "Reset" button in Step 1 to start fresh.
     };
 
     async function processQueue() {
@@ -396,14 +400,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const companyParam = encodeURIComponent(COMPANY_LABELS[selectedCompany] || "Invoices");
         window.location.href = `/download?session_id=${SESSION_ID}&company=${companyParam}`;
         
-        // Show loading state on button
-        modalDownloadBtn.disabled = true;
-        modalDownloadBtn.innerHTML = '<div class="progress-ring" style="border-top-color:white; margin:0 auto;"></div>';
-        
-        // Instead of refresh, clear the session and UI
-        setTimeout(() => {
-            clearSession();
-        }, 1500);
+        // Show success state on button
+        modalDownloadBtn.classList.add("success");
+        modalDownloadBtn.innerHTML = '<i data-lucide="check"></i> Downloaded';
+        lucide.createIcons();
+
+        // Note: We no longer auto-reset the session here to prevent the "No files processed" error.
+        // The user can close the modal and either add more files or reset manually.
     });
 
     // ── Session & History Management ──────────────────────────────
