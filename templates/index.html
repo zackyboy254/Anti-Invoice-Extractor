@@ -47,9 +47,7 @@
                         <span class="chip more">and more onboarding...</span>
                     </div>
                 </div>
-                <button class="btn primary small" id="onboardBtn" onclick="openOnboard()">
-                    <i data-lucide="plus-circle"></i> New Format?
-                </button>
+                <!-- AI Onboarding Button Removed -->
             </div>
 
             <!-- Step 2: Upload -->
@@ -107,41 +105,6 @@
         </footer>
     </div>
 
-    <!-- Onboarding Modal (AI-Driven) -->
-    <div class="modal-overlay hidden" id="onboardModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="success-icon-bg ai-icon-bg">
-                    <i data-lucide="sparkles" class="success-icon ai-icon"></i>
-                </div>
-                <h2>Onboard New Format</h2>
-                <p>Upload a sample PDF. our AI will learn the extraction patterns automatically.</p>
-            </div>
-            
-            <form id="onboardForm" class="onboard-form">
-                <div class="form-group">
-                    <label for="onboardCompanyName">Company Name</label>
-                    <input type="text" id="onboardCompanyName" placeholder="e.g. Acme Logistics" required />
-                </div>
-                <div class="form-group">
-                    <label for="onboardSampleFile">Sample Invoice (PDF)</label>
-                    <input type="file" id="onboardSampleFile" accept=".pdf" required />
-                </div>
-                
-                <div id="onboardStatus" class="onboard-status hidden">
-                    <div class="spinner-small"></div>
-                    <span>AI is analyzing patterns...</span>
-                </div>
-
-                <div class="modal-footer no-padding-top">
-                    <button type="submit" id="onboardSubmitBtn" class="btn primary full-width">
-                        <i data-lucide="zap"></i> Start AI Onboarding
-                    </button>
-                    <button type="button" onclick="closeOnboard()" class="btn secondary full-width">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Preview Modal -->
     <div class="modal-overlay hidden" id="previewModal">

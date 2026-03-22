@@ -4,7 +4,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 import io
-import pdfplumber
 import time
 import logging
 import uuid
@@ -131,48 +130,6 @@ async def remove_file_data(file_id: str = Form(...), session_id: str = Form(...)
     return {"status": "success"}
 
 
-from services.ai_onboarding import AIOnboardingService
-
-@app.post("/onboard")
-async def onboard_new_format(
-    file: UploadFile = File(...),
-    company_name: str = Form(...)
-):
-    """
-    Analyzes a sample PDF, generates extraction rules via AI, 
-    and saves them as a new dynamic template.
-    """
-    if not file.filename.lower().endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Please upload a PDF sample.")
-
-    try:
-        contents = await file.read()
-        pdf_source = io.BytesIO(contents)
-        
-        # Extract text from sample for AI analysis
-        with pdfplumber.open(pdf_source) as pdf:
-            text = pdf.pages[0].extract_text() if len(pdf.pages) > 0 else ""
-
-        if not text:
-            raise ValueError("Could not read text from the sample PDF.")
-
-        # Call AI service to generate rules
-        template = await AIOnboardingService.generate_template(text, company_name)
-        
-        # Save the new template locally
-        AIOnboardingService.save_template(template)
-
-        logger.info(f"Successfully onboarded new company format: {company_name}")
-        
-        return {
-            "status": "success",
-            "message": f"Successfully onboarded '{company_name}'. Future uploads will now be auto-detected.",
-            "company_key": template["company_key"]
-        }
-
-    except Exception as e:
-        logger.error(f"Onboarding error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/download")

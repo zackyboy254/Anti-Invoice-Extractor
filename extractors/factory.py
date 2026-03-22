@@ -29,29 +29,6 @@ class ExtractorFactory:
                     # 2. Add an elif statement below checking for that string
                     # 3. Return the new Extractor class you created
                     
-                    import os
-                    import json
-                    from extractors.template_extractor import TemplateExtractor
-                    
-                    # 1. First, check for dynamic JSON templates in the company_rules folder
-                    rules_dir = os.path.join(os.path.dirname(__file__), "company_rules")
-                    if os.path.exists(rules_dir):
-                        for filename in os.listdir(rules_dir):
-                            if filename.endswith(".json"):
-                                try:
-                                    template_path = os.path.join(rules_dir, filename)
-                                    with open(template_path, 'r') as f:
-                                        rules = json.load(f)
-                                    
-                                    # Check if any detection keyword matches the PDF text
-                                    keywords = rules.get("detection_keywords", [])
-                                    if any(kw.lower() in text_lower for kw in keywords):
-                                        print(f"Detected format via Template: {rules.get('company_name')}")
-                                        return TemplateExtractor(pdf_source, template_path)
-                                except Exception as e:
-                                    print(f"Error loading template {filename}: {e}")
-
-                    # 2. Fall back to hard-coded extractors
                     if "biashara merchant company" in text_lower or "bmc" in text_lower or "delivery note" in text_lower:
                         print(f"Detected format: Biashara Merchant Company")
                         return BMCExtractor(pdf_source)

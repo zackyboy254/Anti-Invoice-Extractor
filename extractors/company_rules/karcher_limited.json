@@ -1,0 +1,25 @@
+{
+    "company_name": "Karcher Limited",
+    "company_key": "karcher_limited",
+    "detection_keywords": [
+        "Karcher Limited",
+        "Tax Invoice"
+    ],
+    "header_rules": {
+        "order_number": "Order No:\\s*(\\w+)",
+        "date": "Date:\\s*([\\d/]+)",
+        "customer_name": "Customer:\\s*(.*)"
+    },
+    "line_item_rules": {
+        "header_trigger": "Description",
+        "stop_trigger": "Total",
+        "row_pattern": "^(\\w+)\\s+(.*?)\\s+([\\d\\.]+)\\s+([A-Za-z]+)\\s+([\\d\\.]+)$",
+        "column_map": {
+            "product_code": 1,
+            "product_description": 2,
+            "units": 3,
+            "uom": 4,
+            "weight": 5
+        }
+    }
+}
