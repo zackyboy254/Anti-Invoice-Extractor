@@ -156,3 +156,10 @@
 2026-03-22 11:40:55,995 [INFO] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Successfully parsed 1 lines from Sliquor-DN 23858.pdf
 2026-03-22 11:41:10,273 [INFO] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Processing file: Salty Squid-DN 23882.pdf
 2026-03-22 11:41:10,450 [ERROR] [d0cc251d-aa25-4694-a462-8d593aa7cb0d] Error processing Salty Squid-DN 23882.pdf: No item rows could be extracted from this PDF.
+2026-03-22 11:46:25,022 [INFO] Created new session store: ee31f85f-89bc-4908-ac3a-314b4089fea8
+2026-03-22 11:46:25,024 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Processing file: Take Home Sales-SKAL-DN 21342.pdf
+2026-03-22 11:46:25,187 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Successfully parsed 2 lines from Take Home Sales-SKAL-DN 21342.pdf
+2026-03-22 11:46:57,228 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Processing file: Salty Squid-DN 23882.pdf
+2026-03-22 11:46:57,393 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Successfully parsed 1 lines from Salty Squid-DN 23882.pdf
+2026-03-22 11:47:11,113 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Generating download for company prefix: Batch
+2026-03-22 11:47:11,201 [INFO] [ee31f85f-89bc-4908-ac3a-314b4089fea8] Generating download for company prefix: Batch

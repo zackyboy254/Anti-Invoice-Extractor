@@ -239,6 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Update company name in UI if needed (dynamic label)
                 const statusTxt = document.getElementById(`status-text-${item.id}`);
                 statusTxt.innerText = `${data.company || 'Extracted'}: ${data.message}`;
+
+                // Add to history immediately for real-time tracking
+                if (!sessionHistory.some(i => i.id === item.id)) {
+                    sessionHistory.push({...item});
+                }
             } else {
                 throw new Error(data.detail || "Error");
             }
@@ -279,29 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // ── Modal Actions ─────────────────────────────────────────────
-    window.showPreview = function(fileId) {
-        const item = uploadQueue.find(i => i.id === fileId);
-        if (!item || !item.extractedData) return;
-
-        previewTitle.textContent = `Data: ${item.file.name}`;
-        previewTableBody.innerHTML = "";
-
-        item.extractedData.forEach(row => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${row.ProductCode || '-'}</td>
-                <td>${row.ProductDescription || '-'}</td>
-                <td>${row.Units || '-'}</td>
-                <td>${row.UOM || '-'}</td>
-                <td>${row.QtyOrdered || '-'}</td>
-                <td>${row.Weight || '-'}</td>
-            `;
-            previewTableBody.appendChild(tr);
-        });
-
-        previewModal.classList.remove("hidden");
-        lucide.createIcons();
-    };
+    // showPreview was duplicated below, using the more robust version at the bottom of the file
 
     window.closePreview = function() {
         previewModal.classList.add("hidden");
@@ -325,9 +308,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ── Session & History Management ──────────────────────────────
     async function clearSession() {
-        // 1. Save successful items to history
-        const successfulItems = uploadQueue.filter(i => i.status === "success");
-        sessionHistory = [...sessionHistory, ...successfulItems];
+        // 1. History is now updated in real-time in processQueue.
+        // We ensure sessionHistory only contains unique IDs.
 
         // 2. Reset Backend State
         try {
