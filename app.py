@@ -6,6 +6,7 @@ from fastapi.requests import Request
 import io
 import time
 import logging
+import uuid
 from datetime import datetime
 from typing import Optional
 
@@ -49,8 +50,12 @@ COMPANY_EXTRACTORS = {
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui(request: Request):
-    """Serves the main single-page application."""
-    return templates.TemplateResponse("index.html", {"request": request})
+    """Serves the main single-page application with a unique session ID."""
+    session_id = str(uuid.uuid4())
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "session_id": session_id
+    })
 
 
 @app.post("/reset")
