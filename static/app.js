@@ -156,12 +156,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show global download if there's at least one success
         const hasSuccess = uploadQueue.some(i => i.status === "success");
         const globalDownloadBtn = document.getElementById("globalDownloadBtn");
+        const clearQueueBtn = document.getElementById("clearQueueBtn");
         if (globalDownloadBtn) {
             globalDownloadBtn.classList.toggle("hidden", !hasSuccess);
             
             // Disable until all files in queue are processed (success or error)
             const allDone = uploadQueue.every(i => i.status === "success" || i.status === "error");
             globalDownloadBtn.disabled = !allDone;
+        }
+
+        if (clearQueueBtn) {
+            // Show clear button as long as there's something in the queue
+            clearQueueBtn.classList.toggle("hidden", uploadQueue.length === 0);
         }
     }
 
@@ -204,6 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // After download, we don't clear session automatically anymore to avoid race conditions.
         // The user can use the "Reset" button in Step 1 to start fresh.
+    };
+
+    window.clearQueue = async function() {
+        if(confirm("Are you sure you want to clear the entire queue? This cannot be undone.")) {
+            await clearSession();
+        }
     };
 
     async function processQueue() {

@@ -266,3 +266,20 @@
 2026-03-22 12:55:59,669 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Successfully parsed 3 lines from SO334001176.pdf
 2026-03-22 12:56:07,228 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Generating download for company prefix: Batch
 2026-03-22 12:56:07,620 [INFO] [80521c72-5c95-43b5-8b50-82a7f36b8fbc] Generating download for company prefix: Batch
+2026-03-22 13:03:31,824 [INFO] Created new session store: d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9
+2026-03-22 13:03:31,835 [INFO] [d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9] Processing file: Sliquor-DN 23860.pdf
+2026-03-22 13:03:32,360 [INFO] [d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9] Successfully parsed 1 lines from Sliquor-DN 23860.pdf
+2026-03-22 13:03:36,772 [INFO] [d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9] Generating download for company prefix: Batch
+2026-03-22 13:03:37,353 [INFO] [d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9] Generating download for company prefix: Batch
+2026-03-22 13:06:19,447 [INFO] [d1668f9a-fef2-4eb5-9fd4-b4bcc4d397d9] Removed file data for ID: file-kmdqznlap
+2026-03-22 13:07:02,241 [INFO] Created new session store: 9ac6e4dc-1fb1-4789-8048-df3b07d34fc2
+2026-03-22 13:07:02,243 [INFO] [9ac6e4dc-1fb1-4789-8048-df3b07d34fc2] Processing file: Talisman-FFK-DN 21307.pdf
+2026-03-22 13:07:02,765 [INFO] [9ac6e4dc-1fb1-4789-8048-df3b07d34fc2] Successfully parsed 1 lines from Talisman-FFK-DN 21307.pdf
+2026-03-22 13:08:36,572 [INFO] Created new session store: 0ff81353-f201-49fa-9807-df47274b752c
+2026-03-22 13:08:36,574 [INFO] [0ff81353-f201-49fa-9807-df47274b752c] Processing file: Talisman-FFK-DN 21307.pdf
+2026-03-22 13:08:37,052 [INFO] [0ff81353-f201-49fa-9807-df47274b752c] Successfully parsed 1 lines from Talisman-FFK-DN 21307.pdf
+2026-03-22 13:08:45,775 [INFO] Reset session store: 0ff81353-f201-49fa-9807-df47274b752c
+2026-03-22 13:08:54,452 [INFO] Created new session store: 0ff81353-f201-49fa-9807-df47274b752c
+2026-03-22 13:08:54,454 [INFO] [0ff81353-f201-49fa-9807-df47274b752c] Processing file: Verum-DN 21336.pdf
+2026-03-22 13:08:54,949 [INFO] [0ff81353-f201-49fa-9807-df47274b752c] Successfully parsed 1 lines from Verum-DN 21336.pdf
+2026-03-22 13:08:57,594 [INFO] [0ff81353-f201-49fa-9807-df47274b752c] Removed file data for ID: file-9lpyyhx2m

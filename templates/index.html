@@ -92,6 +92,9 @@
                         <button id="globalDownloadBtn" class="btn primary small hidden" onclick="triggerDownload()">
                             <i data-lucide="download"></i> Download Excel
                         </button>
+                        <button id="clearQueueBtn" class="btn secondary small hidden" onclick="clearQueue()">
+                            <i data-lucide="trash-2"></i> Clear Queue
+                        </button>
                         <span class="badge" id="queueStatus">0 / 0</span>
                     </div>
                 </div>
@@ -107,8 +110,6 @@
         </footer>
     </div>
 
-
-    <div class="app-container">
 
     <!-- Preview Modal -->
     <div class="modal-overlay hidden" id="previewModal">
@@ -216,13 +217,9 @@
                     <i data-lucide="download"></i> Download Excel
                 </button>
                 <button onclick="closeSuccess()" class="btn secondary full-width">Maybe Later / Add More</button>
-                <p class="refresh-tip">Session state persists until manual reset.</p>
             </div>
         </div>
     </div>
-
-    </div>
-
     <script>
         const SESSION_ID = "{{ session_id }}";
     </script>
